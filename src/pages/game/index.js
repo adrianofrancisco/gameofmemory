@@ -35,7 +35,7 @@ class Game extends Component {
 			})
 		} else {
 
-			this.restartGame();
+			await this.restartGame();
 
 			var dataCard = [];
 
@@ -81,9 +81,23 @@ class Game extends Component {
 
 	handleOnClickChooseCard = async (data) => {
 		var countPlays = 0;
+		var countCardsSelected = 0;
+		var dataCard = [];
+		var limitCardsSelected = false;
 		var numberPlaysOk = parseInt(this.state.numberPlaysOk);
 
-		if (!data.selected) {
+		dataCard = this.state.cards;
+		for (var row = 0; row < dataCard.length; row++) {
+			if (dataCard[row].selected && !dataCard[row].find) {
+				countCardsSelected = parseInt(countCardsSelected) + 1;
+			}
+		}
+
+		if (countCardsSelected > 1) {
+			limitCardsSelected = true;
+		}
+
+		if (!data.selected && !limitCardsSelected) {
 			data.showCard = !data.showCard;
 			data.selected = !data.selected;
 
