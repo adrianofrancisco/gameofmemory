@@ -13,7 +13,7 @@ import { Link } from 'react-router-dom';
 
 let firstCardChoose = 0;
 const totalPossiblePlays = 10;
-const pairsCards = 9;
+const pairsCards = 10;
 
 class Game extends Component {
 	state = {
@@ -40,7 +40,7 @@ class Game extends Component {
 			var dataCard = [];
 
 			var cards = [];
-			for (var row = 0; row <= pairsCards; row++) {
+			for (var row = 0; row < pairsCards; row++) {
 				var numberCard = Math.floor(Math.random() * 99);
 
 				if (!cards.includes(numberCard)) {
