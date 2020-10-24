@@ -12,8 +12,8 @@ import { saveRanking } from '../../store/modules/ranking/ranking-store';
 import { Link } from 'react-router-dom';
 
 let firstCardChoose = 0;
-const totalPossiblePlays = 10;
-const pairsCards = 9;
+const totalPossiblePlays = 2;
+const pairsCards = 1;
 
 class Game extends Component {
 	state = {
@@ -102,7 +102,7 @@ class Game extends Component {
 
 						numberPlaysOk = parseInt(this.state.numberPlaysOk) + 1;
 					} else {
-						await new Promise(r => setTimeout(r, 500));
+						await new Promise(r => setTimeout(r, 350));
 						this.reverseCards();
 					}
 
