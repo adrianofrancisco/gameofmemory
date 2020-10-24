@@ -12,8 +12,8 @@ import { saveRanking } from '../../store/modules/ranking/ranking-store';
 import { Link } from 'react-router-dom';
 
 let firstCardChoose = 0;
-const totalPossiblePlays = 2;
-const pairsCards = 1;
+const totalPossiblePlays = 10;
+const pairsCards = 9;
 
 class Game extends Component {
 	state = {
